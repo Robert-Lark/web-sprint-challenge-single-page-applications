@@ -21,14 +21,19 @@ function PizzaForm() {
 		tomatoe: false,
 		pineapple: false,
 		basil: false,
-		specialInstructions: ""
+		specialInstructions: "",
 	};
 	const [formState, setFormState] = useState(defaultState);
 	const [errors, setErrors] = useState({
-		name: ""
+		name: "",
 	});
+	const [orderState, setOrder] = useState([]);
 	const onSubmit = (event) => {
 		event.preventDefault();
+		const order = setOrder({
+			...orderState,
+			formState,
+		});
 	};
 	const formSchema = Yup.object().shape({
 		name: Yup.string()
@@ -69,6 +74,7 @@ function PizzaForm() {
 		});
 		validateChange(e);
 	};
+
 	return (
 		<div className="form" styles={{ backgroundImage: `url(${Pizza})` }}>
 			<h1>Order a pizza Below.</h1>
@@ -180,6 +186,7 @@ function PizzaForm() {
 				</label>
 				<button className="button">ADD TO ORDER</button>
 			</form>
+			<pre>Your Order:{JSON.stringify(orderState)}</pre>
 		</div>
 	);
 }
