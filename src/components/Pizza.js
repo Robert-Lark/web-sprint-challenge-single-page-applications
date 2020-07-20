@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Input from "./Input.js";
 import * as Yup from "yup";
+import "./components.css";
+import Pizza from "./Pizza.jpg";
 
 function PizzaForm() {
 	const FormP = styled.p`
@@ -32,6 +34,14 @@ function PizzaForm() {
 		name: Yup.string()
 			.min(2, "must include more then 2 characters")
 			.required("must include at least 2 characters"),
+		size: Yup.array(),
+		Cheese: Yup.boolean(),
+		Bacon: Yup.boolean(),
+		WhiteSauce: Yup.boolean(),
+		Tomatoe: Yup.boolean(),
+		Pineapple: Yup.boolean(),
+		Basil: Yup.boolean(),
+		specialInstructions: Yup.string(),
 	});
 	const validateChange = (e) => {
 		e.persist();
@@ -60,7 +70,7 @@ function PizzaForm() {
 		validateChange(e);
 	};
 	return (
-		<div>
+		<div className="form" styles={{ backgroundImage: `url(${Pizza})` }}>
 			<h1>Order a pizza Below.</h1>
 			<form onSubmit={onSubmit}>
 				<label className="input">
@@ -110,6 +120,7 @@ function PizzaForm() {
 						onChange={changeHandler}
 						checked={formState.cheese}
 						errors={errors}
+						value="yes"
 					/>
 					BACON
 					<input

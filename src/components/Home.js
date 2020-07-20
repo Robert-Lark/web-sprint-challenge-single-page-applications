@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import PizzaForm from "./Pizza";
+
 
 function Home() {
 	const H1 = styled.h1`
