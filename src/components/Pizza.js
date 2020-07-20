@@ -15,12 +15,12 @@ function PizzaForm() {
 	const defaultState = {
 		name: "",
 		size: "",
-		cheese: false,
-		bacon: false,
-		whiteSauce: false,
-		tomatoe: false,
-		pineapple: false,
-		basil: false,
+		// cheese: false,
+		// bacon: false,
+		// whiteSauce: false,
+		// tomatoe: false,
+		// pineapple: false,
+		// basil: false,
 		specialInstructions: "",
 	};
 	const [formState, setFormState] = useState(defaultState);
@@ -115,7 +115,7 @@ function PizzaForm() {
 				</label>
 				<br />
 				<br />
-				<label className="input" htmlFor="terms">
+				<label>
 					<FormP>Select Topings</FormP>
 					<br />
 					<br />
@@ -124,49 +124,52 @@ function PizzaForm() {
 						name="Cheese"
 						type="checkbox"
 						onChange={changeHandler}
-						checked={formState.cheese}
-						errors={errors}
 						value="yes"
 					/>
-					BACON
+				</label>
+				BACON
+				<label>
 					<input
 						name="Bacon"
 						type="checkbox"
 						onChange={changeHandler}
-						checked={formState.bacon}
-						errors={errors}
+						value="yes"
 					/>
-					WHITESAUCE
+				</label>
+				WHITESAUCE
+				<label>
 					<input
 						name="WhiteSauce"
 						type="checkbox"
 						onChange={changeHandler}
-						checked={formState.whiteSauce}
-						errors={errors}
+						value="yes"
 					/>
-					TOMATO
+				</label>
+				TOMATO
+				<label>
 					<input
 						name="Tomatoe"
 						type="checkbox"
 						onChange={changeHandler}
-						checked={formState.tomatoe}
-						errors={errors}
+						value="yes"
 					/>
-					PINEAPPLE
+				</label>
+				PINEAPPLE
+				<label>
 					<input
 						name="Pineapple"
 						type="checkbox"
 						onChange={changeHandler}
-						checked={formState.pineapple}
-						errors={errors}
+						value="yes"
 					/>
-					BASIL
+				</label>
+				BASIL
+				<label>
 					<input
 						name="Basil"
 						type="checkbox"
 						onChange={changeHandler}
-						checked={formState.basil}
-						errors={errors}
+						value="yes"
 					/>
 				</label>
 				<br />

@@ -20,7 +20,6 @@ describe("Link Test", () => {
 	it("can you select multiple topings", () => {
 		cy.get('[name="Cheese"]').click().should("have.checked", true);
 		cy.get('[name="Bacon"]').click().should("have.checked", true);
-		cy.get('[name="Whitesauce"]').click().should("have.checked", true);
 		cy.get('[name="Tomatoe"]').click().should("have.checked", true);
 		cy.get('[name="Pineapple"]').click().should("have.checked", true);
 		cy.get('[name="Basil"]').click().should("have.checked", true);
